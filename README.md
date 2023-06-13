@@ -36,6 +36,8 @@ Hoisting a minimal build script for the kernel and the objects is not difficult 
 Having no diverse compiler choice for the base system or a simple base shell script that builds the complete system sequentially as a baseline keeps non-expert and non-interested parties from investigating how to modify the kernel to improve it. The complete stagnation of the build system and the complete removal of GCC which makes finding compiler regressions between different toolchains impossible at present without resorting to software archaeology is an odd part the situation.
 
 
+Build systems of large projects are often intentionally obfuscated in industry (job security?). It is not difficult to build a kernel, just a 20 MB text listing of the same call to cc for each point in the source tree. Having a huge worldwide archive yet with only two rolling releases of less than 1 GB each to go back to as a user is a questionable practice too. Every release ever made on all architectures could easily be compiled and published as a torrent. Having old packages and ports is always valuable for comparison and for (re)bootstrapping GCC compilation for instance.
+
 
 
 Sincerely,
