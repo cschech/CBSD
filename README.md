@@ -17,7 +17,7 @@ cat >vers.c <<eof
 
 [...]
 
-in conf/newvars.sh.
+in /sys/conf/newvars.sh.
 
 as well as the removal of the "kernel reordering" in /etc/rc by default, or a check against
 
