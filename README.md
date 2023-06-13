@@ -38,6 +38,15 @@ Having no diverse compiler choice for the base system or a simple base shell scr
 
 Build systems of large projects are often intentionally obfuscated in industry (job security?). It is not difficult to build a kernel, just a 20 MB text listing of the same call to cc for each point in the source tree. Having a huge worldwide archive yet with only two rolling releases of less than 1 GB each to go back to as a user is a questionable practice too. Every release ever made on all architectures could easily be compiled and published as a torrent. Having old packages and ports is always valuable for comparison and for (re)bootstrapping GCC compilation for instance.
 
+***
+Further reading:
+
+" It is apparent that a wide range of considerations are pertinent to the engineering of security of information. Historically, the literature of computer systems has more narrowly defined the term protection to be just those security techniques that control the access of executing programs to stored information.3 An example of a protection technique is labeling of computer-stored files with lists of authorized users. Similarly, the term authentication is used for those security techniques that verify the identity of a person (or other external agent) making a request of a computer system. An example of an authentication technique is demanding a password. This paper concentrates on protection and authentication mechanisms, with only occasional reference to the other equally necessary security mechanisms. One should recognize that concentration on protection and authentication mechanisms provides a narrow view of information security, and that a narrow view is dangerous. The objective of a secure system is to prevent all unauthorized use of information, a negative kind of requirement. It is hard to prove that this negative requirement has been achieved, for one must demonstrate that every possible threat has been anticipated. Thus an expansive view of the problem is most appropriate to help ensure that no gaps appear in the strategy. In contrast, a narrow concentration on protection mechanisms, especially those logically impossible to defeat, may lead to false confidence in the system as a whole.4"
+
+https://www.cs.virginia.edu/~evans/cs551/saltzer/
+
+
+
 
 
 Sincerely,
