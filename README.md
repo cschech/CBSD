@@ -5,10 +5,6 @@ The OpenBSD "kernel relinking" process contains a flaw which can lead to both re
 
 to fix this problem I propose a simple patch along these lines 
 
-#       and enable POOL_DEBUG in sys/conf/GENERIC
-#       A month or so before release, select STATUS "-beta"
-#       and disable POOL_DEBUG in sys/conf/GENERIC
-
 [...]
 
 +#ost="CBSD"
@@ -16,14 +12,25 @@ to fix this problem I propose a simple patch along these lines
 
 +sha512 -h /var/db/obj.${id}.sha512 *.o lorder
 
+cat >vers.c <<eof
 
-in conf/newvars.sh 
+[...]
 
-and the removal of the "kernel reordering" in /etc/rc by default, or a check against
+in conf/newvars.sh.
+
+as well as the removal of the "kernel reordering" in /etc/rc by default, or a check against
 
 +sha512 -c /var/db/obj.${id}.sha512 *.o lorder 
 
-in /etc/rc before proceeding with the re-ordering.
+in /etc/rc before proceeding with the re-ordering. Of course the checksums for both the kernel and the objects can just be surreptitiously updated to work around this mitigation, but that requires a different exploit path than injecting the wrong binaries without being detected.
+
+Merely changing the compiler flags to clang for some of the emitted objects will cause the relinking to crash during "rm" and delete the root filesystem contents on boot without changing the program text of the inputs to cclang.
+
+A sanity check of a newly-installed kernel (e.g., surviving an intermediate reboot cycle ), before immediate relinking the next boot can reduce problems with untested kernels being built and then immediately panicking when relinking.
+
+This has been observed this month.
+
+
 
 Sincerely,
 
