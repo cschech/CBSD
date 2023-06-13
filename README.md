@@ -8,6 +8,7 @@ to fix this problem I propose a simple patch along these lines
 [...]
 
 +#ost="CBSD"
+
 +#osr="0.01"
 
 +sha512 -h /var/db/obj.${id}.sha512 *.o lorder
