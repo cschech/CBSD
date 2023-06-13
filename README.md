@@ -29,9 +29,12 @@ in /etc/rc before proceeding with the re-ordering. Of course the checksums for b
 
 Merely changing the compiler flags to clang for some of the emitted objects will cause the relinking to crash during "rm" and delete the root filesystem contents on boot without changing the program text of the inputs to cclang.
 
-A sanity check of a newly-installed kernel (e.g., surviving an intermediate reboot cycle ), before immediate relinking the next boot can reduce problems with untested kernels being built and then immediately panicking when relinking.
+A sanity check of a newly-installed kernel (e.g., surviving an intermediate reboot cycle ), before immediate relinking the next boot can reduce problems with untested kernels being built (or maliciously-constructed and then introduced into a system to later be loaded in as a "relinked kernel" which is not a permulation of the last one build or received from a distributed official kernel - and then immediately panicking when relinking in the lesser case and damaging or destroying the system or surreptitiously tampering with the kernel configuration and allowing a local root exploit on the next /etc/rc invocation should be avoided by correct design decisions and implementation.
 
-This has been observed this month.
+Hoisting a minimal build script for the kernel and the objects is not difficult by careful dissection of the output of make or by trapping compiler and linker invocations during a build. Because make is incremental it is easy to then rebuild a new system with arbitary properties.
+
+Having no diverse compiler choice for the base system or a simple base shell script that builds the complete system sequentially as a baseline keeps non-expert and non-interested parties from investigating how to modify the kernel to improve it. The complete stagnation of the build system and the complete removal of GCC which makes finding compiler regressions between different toolchains impossible at present without resorting to software archaeology is an odd part the situation.
+
 
 
 
