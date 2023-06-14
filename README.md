@@ -23,7 +23,18 @@ in /sys/conf/newvars.sh.
 
 as well as the removal of the "kernel reordering" in /etc/rc by default, or a check against
 
-+sha512 -c /var/db/obj.${id}.sha512 *.o lorder 
++sha512 -c /var/db/obj.${id}.sha512 *.o lorder /bsd
+
+^ this I will refer to as (1) - the only valid precondition for doing it at runtime - can warn if signed or unsigned, users can even sign them whenever they want, etc
+
+the relinked kernel is random and you can just delete the input objects now, anyway, and keep the lorder file and then manually compute how to shuffle it without the linker doing it for you each time
+
+delete the old lorder file
+
+
+^ maintains the set of important checksums as one atomic unit that can be signed, if they are truly equivalent and you trust whatever process made that guarantee for you...
+
+never run a reordering job unless 
 
 in /etc/rc before proceeding with the re-ordering. Of course the checksums for both the kernel and the objects can just be surreptitiously updated to work around this mitigation, but that requires a different exploit path than injecting the wrong binaries without being detected.
 
@@ -54,6 +65,27 @@ My initial bug report to Theo:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
+***
+
+Implications of the rc script not validating the whole blob of objects before linking it -
+
+1. Take an old link kit from a previous release and put it in /usr/share/relink - it gets reordered and relinked into the new kernel
+2. Why not relink only on shutdown? Right at startup is the most critical section to be relinking in, the handoff from kernel to the user gets broken as indicated.
+
+Shut down everything else
+check sha512sum for everything in /usr/share/relink + /bsd from install set in initial install from a release or check against last set of checksums every time it's reordered - and make a reordered copy
+move in place for next boot
+run sanity checks or bring up in a vm and run a self-test for bonus points
+log the checksums to syslog and mail to root or whatever
+sync disk
+
+on encrypted partitions you are completely confident that it's not tampered with
+
+you can also make a strong guarantee that all your kernels are derived from the official ones, or some branch that you made yourself
+
+you can do the same with the .rd kernel
+
+3. minimally put the sha256 checksum and the signature that are on the http site inside the release media image. and a manifest of all files in each installset and their correct signatures 
 
 
 Sincerely,
