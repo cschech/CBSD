@@ -69,9 +69,11 @@ https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
 Implications of the rc script not validating the whole blob of objects before linking it -
 
+0. So many objects to infect.. inject malicious/arbitary/corrupt code/logic bombs into the system easily
 1. Take an old link kit from a previous release and put it in /usr/share/relink - it gets reordered and relinked into the new kernel
 2. Why not relink only on shutdown? Right at startup is the most critical section to be relinking in, the handoff from kernel to the user gets broken as indicated.
-
+3. You have to trust the initial link kit isn't backdoored versus everyone (in the past) evaluating one static kernel in all environments
+   
 Shut down everything else
 check sha512sum for everything in /usr/share/relink + /bsd from install set in initial install from a release or check against last set of checksums every time it's reordered - and make a reordered copy
 move in place for next boot
@@ -86,7 +88,7 @@ you can also make a strong guarantee that all your kernels are derived from the 
 you can do the same with the .rd kernel
 
 3. minimally put the sha256 checksum and the signature that are on the http site inside the release media image. and a manifest of all files in each installset and their correct signatures 
-
+4. consider just signing everything in the entire distribution and the source tree
 
 for the least attack surface reorder only after compiling when shutting down or at end of fresh install
 
