@@ -1,3 +1,11 @@
+Wed Jun 14 23:40:21 UTC 2023
+
+# Abstract: 
+
+Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's ACM popular lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on. This avoids a circular specification of the operating system where it is defined as its implementation.
+
+--
+
 Tue Jun 13 23:36:31 UTC 2023
 
 # CBSD
