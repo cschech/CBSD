@@ -13,6 +13,8 @@ Model right now is chain of trust from release --- never interfered with - relin
 
 should just be - last link kit matches last booted kernel (or initial release kernel provided with initial link kit) and no other posibilities.
 
+or - throw away link kit idea as a terrible attack surface to ship everywhere, put the source in the install sets and always build from source, then only a flaw in the initial kernel in the release or a compiler/upstream toolchain flaw would break things.
+
 
 to fix this problem I propose a simple patch along these lines 
 
@@ -30,11 +32,13 @@ cat >vers.c <<eof
 
 in /sys/conf/newvars.sh.
 
-as well as the removal of the "kernel reordering" in /etc/rc by default, or a check against
+as well as the removal of the "kernel reordering" in /etc/rc with the current approach not checking the link kit component checksums directly being deprecated, or a check against
 
 +sha512 -c /var/db/obj.${id}.sha512 *.o lorder /bsd
 
-^ this I will refer to as (1) - the only valid precondition for doing it at runtime - can warn if signed or unsigned, users can even sign them whenever they want, etc
+before reordering, or making it optional for the user
+
+^ this I will refer to as (1) - the only valid precondition for doing it at runtime rather than only ever after the initial compilation/linking by computing randomized offsets to the initial build offsets without preserving unlinked object code in the wild - can warn if signed or unsigned, users can even sign them whenever they want, etc
 
 the relinked kernel is random and you can just delete the input objects now, anyway, and keep the lorder file and then manually compute how to shuffle it without the linker doing it for you each time
 
