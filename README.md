@@ -86,6 +86,8 @@ Implications of the rc script not validating the whole blob of objects before li
 1. Take an old link kit from a previous release and put it in /usr/share/relink - it gets reordered and relinked into the new kernel
 2. Why not relink only on shutdown? Right at startup is the most critical section to be relinking in, the handoff from kernel to the user gets broken as indicated.
 3. You have to trust the initial link kit isn't backdoored versus everyone (in the past) evaluating one static kernel in all environments
+
+Basic shutdown procedure:
    
 Shut down everything else
 check sha512sum for everything in /usr/share/relink + /bsd from install set in initial install from a release or check against last set of checksums every time it's reordered - and make a reordered copy
