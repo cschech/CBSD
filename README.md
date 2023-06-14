@@ -3,7 +3,12 @@ Tue Jun 13 23:36:31 UTC 2023
 # CBSD
 Fork of OpenBSD (via simple examples) that patches problems with kernel relinking opening up undesirable regressions and local exploits, and that aims to provide a parallel build environment that's not self-hosted in OpenBSD and which also can be bootstrapped from the OpenBSD 7.3/amd64 release media easily with or without BSD make.
 
-The OpenBSD "kernel relinking" process contains a flaw which can lead to both regressions and intentional problems because the signatures of the object files being relinked are not kept in sync with the kernel.
+The OpenBSD "kernel relinking" process contains a flaw which can lead to both regressions and intentional problems because the signatures of the object files being relinked are not kept in sync with the kernel (or anywhere that reorder currently checks because it's naive and didn't consider this.
+
+Model right now is chain of trust from release --- never interfered with - relink - never - relink - no third party builds - relink - Three letter agencies and hostile actors putting payloads everywhere OpenBSD runs that isn't a secure site -> relink - special day happens, everything goes Y2K or worse ->
+
+should just be - last link kit matches last booted kernel (or initial release kernel provided with initial link kit) and no other posibilities.
+
 
 to fix this problem I propose a simple patch along these lines 
 
