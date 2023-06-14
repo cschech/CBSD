@@ -7,7 +7,7 @@ Fork of OpenBSD (via simple examples) that patches problems with kernel relinkin
 
 Dear OpenBSD developers, please fix the following bug/vulnerability:
 
-The OpenBSD "kernel relinking" process contains a flaw which can lead to both regressions and intentional problems because the signatures of the object files being relinked are not kept in sync with the kernel (or anywhere that reorder currently checks because it's naive and didn't consider this.
+The OpenBSD "kernel relinking" process contains a flaw which can lead to both regressions and intentional problems because the signatures of the object files being relinked are not kept in sync with the kernel (or anywhere that reorder currently checks because it's naive and didn't consider this.)
 
 Model right now is chain of trust from release --- never interfered with - relink - never - relink - no third party builds - relink - Three letter agencies and hostile actors putting payloads everywhere OpenBSD runs that isn't a secure site -> relink - special day happens, everything goes Y2K or worse ->
 
