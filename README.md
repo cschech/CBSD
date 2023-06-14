@@ -5,6 +5,10 @@ Fork of OpenBSD (via simple examples) that patches problems with kernel relinkin
 
 ***
 
+I had a really nice test harness for this but there were only 4 files left on my 800 GB partition after the kernel crashed while the startup relinking phase was rm'ing files so I'm not reproducing that again.
+
+***
+
 Dear OpenBSD developers, please fix the following bug/vulnerability:
 
 The OpenBSD "kernel relinking" process contains a flaw which can lead to both regressions and intentional problems because the signatures of the object files being relinked are not kept in sync with the kernel (or anywhere that reorder currently checks because it's naive and didn't consider this.)
