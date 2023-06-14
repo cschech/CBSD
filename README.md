@@ -50,7 +50,9 @@ https://www.acsac.org/2002/papers/classic-multics-orig.pdf
 
 https://www.cs.virginia.edu/~evans/cs551/saltzer/
 
+My initial bug report to Theo:
 
+https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
 
 
