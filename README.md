@@ -34,7 +34,7 @@ delete the old lorder file
 
 ^ maintains the set of important checksums as one atomic unit that can be signed, if they are truly equivalent and you trust whatever process made that guarantee for you...
 
-never run a reordering job unless 
+never run a reordering job unless (1) holds, otherwise you can accidentally or intentionally trash the kernel or revert it to one you already know the order of (from a release or you made yourself)
 
 in /etc/rc before proceeding with the re-ordering. Of course the checksums for both the kernel and the objects can just be surreptitiously updated to work around this mitigation, but that requires a different exploit path than injecting the wrong binaries without being detected.
 
@@ -86,6 +86,13 @@ you can also make a strong guarantee that all your kernels are derived from the 
 you can do the same with the .rd kernel
 
 3. minimally put the sha256 checksum and the signature that are on the http site inside the release media image. and a manifest of all files in each installset and their correct signatures 
+
+
+for the least attack surface reorder only after compiling when shutting down or at end of fresh install
+
+at startup always has a maximum allowance for tampering/interfering with other services, also slows down boot at the most important stage
+
+Lots of ways to solve the problem adequately and little downside.
 
 
 Sincerely,
