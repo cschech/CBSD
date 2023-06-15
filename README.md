@@ -56,7 +56,7 @@ Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
 Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
-Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation, and with lack of a trusted compiler. The userland is pure C code, for the most part, and should be now and forever.
+Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation, and with lack of a trusted compiler, and a trusted build environment which is not self-hosted by the kernel.
 
 # Summary 
 
@@ -141,6 +141,8 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
+The Bittorrent protocol (has been around for two decades, covers a similar problem domain when file integrity of collections of objects is concerned). This isn't rocket science.
+
 # My initial bug report to Theo:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
@@ -151,5 +153,4 @@ Thu Jun 15 16:59:52 UTC 2023
 
 # Conclusion
 
-The unstated truth about the portability of self-hosted Unix is that it is the synthetic analogue of a biological reproduction process, and it is prone to the accumulation of "junk DNA" (which might not actually be junk but could trigger or be triggered by another process). Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
-
+The unstated truth about the portability of self-hosted Unix is that it is the synthetic analogue of a biological organism (with a self-reproduction process), and it is prone to the accumulation of "junk DNA" as well as "viral DNA"  (which might not actually be junk but could trigger or be triggered by another process). In this analogy, OpenBSD's kernel-reodering mechanism (as currently implemented with no integrity checks of object files) is "cancer". Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
