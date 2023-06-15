@@ -56,7 +56,7 @@ Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
 Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
-Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation.
+Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation, and with lack of a trusted compiler. The userland is pure C code, for the most part, and should be now and forever.
 
 # Summary 
 
