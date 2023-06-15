@@ -50,7 +50,6 @@ https://dwheeler.com/trusting-trust/
 https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=31bb1c092dba2b1a692b87cd2ff859bb7ce735f7
 
 
-
 --
 
 Tue Jun 13 23:36:31 UTC 2023
