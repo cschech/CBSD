@@ -125,6 +125,8 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
+The unstated truth about the portability of self-hosted Unix is that it is the synthetic analogue of a biological reproduction process.
+
 # My initial bug report to Theo:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
