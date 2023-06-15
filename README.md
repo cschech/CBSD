@@ -24,6 +24,8 @@ Keeping all link-reordering as a purely-mathematical segment-shuffling operation
 
 OpenBSD's historical focus on isolation from attacks from outside the system neglects attacks from below or inside, which require a focus on both system and data integrity. IBM holds extensive patents in this area (automatic tagging of programs and data when they are added to the system, etc.). Security through obscurity and Unix's obfuscated build process is not helpful when it comes to a system that is widely-deployed on a range of critical infrastructure. A safe design is crucial, as well as careful study of prior work.
 
+The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "COMP" install set is a ready-made off-the-shelf trojan horse in and of itself.
+
 Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
 
 # clang build process
@@ -156,7 +158,14 @@ a reasonably good thing to try." - Ray Solomonoff
 
 [3] Filesystems using optical WORM robotic disc libraries existed at the time of Plan 9's development (e.g. "Ken's filesystem"). Optical drives have notably disappeared from consumer devices despite having the same WORM property, and of course now we also have blockchains, ZFS, and IPFS.
 
-[4] A simple counting argument suffices to show that signature-based methods alone are not enough to detect the presence of malware due to the possibility of arbitrary encoding and polymorphism.
+[4] A simple counting argument suffices to show that signature-based methods alone are not enough to detect the presence of malware due to the possibility of arbitrary encoding and polymorphism. Cf. "tripwire".
+
+[5] We solved the byzantine generals problem (Bitcoin), but we can't get this right.
+
+[5] Light-hearted fictional scenarios that are enjoyable and illustrative of some of the problems:
+
+1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970).
+2. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned space launch systems, or life support systems on space stations). HAL9000 with a twist. 
 
 # My initial bug report to the OpenBSD mailing list:
 
