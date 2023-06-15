@@ -129,6 +129,10 @@ a reasonably good thing to try." - Ray Solomonoff
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
+--
+
+Thu Jun 15 16:59:52 UTC 2023
+
 # Conclusion
 
 The unstated truth about the portability of self-hosted Unix is that it is the synthetic analogue of a biological reproduction process, and it is prone to the accumulation of "junk DNA" (which might not actually be junk but could trigger or be triggered by another process). Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
