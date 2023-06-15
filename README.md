@@ -43,6 +43,15 @@ Running a link kit and a provided binary, and a recompiled version in parallel a
 
 Incentives for tampering or leaks are pervasive. Any detectable strings inside the decoded kernel are vectors for attacks. It has to be decoded *somewhere*. 
 
+
+"I will spend most of this first period belaboring some seemingly obvious points on the need for
+communications security; why we're in this business, and what our objectives really are. It seems
+obvious that we need to protect our communications because they consistently reveal our strengths,
+weaknesses. disposition, plans, and intentions and if the opposition intercepts them be can exploit
+that information by attacking our weak points. avoiding our strengths, countering our plans, and
+frustrating our intentions.. something he can only do if he has advance knowledge of our situation.
+But there's more to it than that."
+
 Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
 Mistakes have been made (e.g. the known backdoor in TrueCrypt).
