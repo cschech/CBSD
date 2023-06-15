@@ -143,7 +143,7 @@ a reasonably good thing to try." - Ray Solomonoff
 
 The Bittorrent protocol (has been around for two decades, covers a similar problem domain when file integrity of collections of objects is concerned). This isn't rocket science.
 
-# My initial bug report to Theo:
+# My initial bug report to the OpenBSD mailing list:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
