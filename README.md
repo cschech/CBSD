@@ -97,7 +97,7 @@ The Teensy Files:
 
 (cue X-Files music and title card) http://www.muppetlabs.com/~breadbox/software/tiny/ 
 
-Kolmogorov Complexity (undecidable)
+Kolmogorov Complexity (undecidable):
 
 https://raysolomonoff.com/publications/z138.pdf
 
