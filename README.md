@@ -53,7 +53,7 @@ But there's more to it than that."
 
 Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
-"Rewrite it in X" - just introduces another trap door. All changes must proceed from a known good state.
+"Rewrite it in X" - just introduces another trap door. All changes must proceed from a known good state. System integration coupled with and security analysis of interfaces and component modules is a non-trivial activity.
 
 Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
