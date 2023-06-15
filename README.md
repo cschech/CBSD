@@ -43,7 +43,7 @@ Incentives for tampering or leaks are pervasive. Any detectable strings inside t
 
 Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
-Mistakes have been made.
+Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
 # Summary 
 
