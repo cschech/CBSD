@@ -27,6 +27,20 @@ I have extracted the compilation phase and linking phase to make them not depend
 
 As of writing, distcc/linux clang would look to be a good candidate for trying to bootstrap the compilation away from the initially-installed OpenBSD system. Trying to do it purely from scratch is difficult (cf. Waite's STAGE2), GNU Mes. 
 
+# Insufficient Workarounds
+
+Keeping the kernel offline and using one-time pads? Better keep them completely offline and never reuse or publish them.
+
+A kernel which is totally opaque to userspace and a reference monitor running in a separation kernel, etc.. WORM-storage-backed filesystems. 
+
+Running a link kit and a provided binary, and a recompiled version in parallel and noting any differences in behaviour. Kernels can trigger processes in userspace and vice-versa by exercising obscure code paths.
+
+Incentives for tampering or leaks are pervasive. Any detectable strings inside the decoded kernel are vectors for attacks. 
+
+Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
+
+Mistakes have been made.
+
 # Summary 
 
 The link kit distributed with OpenBSD when paired with the existing reorder_kernel function (which lacks such a check) as of OpenBSD 7.3 allows the installation of a rootkit for anyone with local access to the machine, or the creator of the link kit provided on the installation media, or by tampering with the installation media. A link kit that is stamped does not suffer from this class of vulnerability in the restricted case of tampering with local access to the machine or the installation media, but a trusted external build environment is required to rule out that the creator of the initial link kit did not install a trojan horse. As GCC support was conspicuously dropped, this difficult for those without access to historical copies of the release media and source distributions. OpenBSD's official installation media notably lacks the signature and checksum for the base installation sets, allowing trivial tampering. The release of official physical media was also discontinued.
