@@ -141,7 +141,7 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
-The Bittorrent protocol (has been around for two decades, covers a similar problem domain when file integrity of collections of objects is concerned). This isn't rocket science.
+PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
 
 # My initial bug report to the OpenBSD mailing list:
 
@@ -158,4 +158,6 @@ Thu Jun 15 16:59:52 UTC 2023
 # Conclusion
 
 The unstated truth (or perhaps dirty secret) about the portability of self-hosted Unix and why Unix is such a highly polished gem (initially, anyway) is that it is the first synthetic analogue of a biological organism (with a self-reproduction process), with C being the portable assembly language, and it is prone to the accumulation of "junk DNA" as well as "viral DNA"  (which might not actually be junk but could trigger or be triggered by another process). In this analogy, OpenBSD's kernel-reodering mechanism (as currently implemented with no integrity checks of object files) is "cancer". Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
+
+All software problems can be fixed.
 
