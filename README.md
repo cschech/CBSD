@@ -2,15 +2,18 @@ Wed Jun 14 23:40:21 UTC 2023
 
 # Abstract: 
 
-Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on. This avoids a circular specification of the operating system where it is defined as its implementation. As a demonstrative example the author provides (in this repository) a new version of the BSD operating system kernel (CBSD) that is not an OpenBSD kernel but which will be reordered by the OpenBSD 7.3 release reorder_kernel utility as it currently exists (which does not check that it has been stamped) and installed as a new kernel during the next boot.
+Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on. 
+
+This avoids a circular specification of the operating system where it is defined as its implementation. As a demonstrative example the author provides (in this repository) a new version of the BSD operating system kernel (CBSD) that is not an OpenBSD kernel but which will be reordered by the OpenBSD 7.3 release reorder_kernel utility as it currently exists (which does not check that it has been stamped) and installed as a new kernel during the next boot.
 
 The lack of such checks allows for many avenues for adversarial actors to replace an operating system kernel.
 
 The core problem with OpenBSD's implementation of kernel reordering is that the operating system is viewed at the link-level as a collection of components and as a monolithic binary during runtime which are two seperate levels of abstraction, leading to this security flaw, where attempting to relink at runtime without checking that the objects match the stamp from the release allows relinking of an arbitrary computer program with the same link structure.
 
-If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, this security vulnerability would be closed.
+If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, for all kernel objects /usr/share/relink/kernel/$BUILD, this security vulnerability would be closed.
 
-In summary, the link kit distributed with OpenBSD when paired with the existing reorder_kernel function as of OpenBSD 7.3 is a rootkit.
+In summary, the link kit distributed with OpenBSD when paired with the existing reorder_kernel function (which lacks such a check) as of OpenBSD 7.3 is a rootkit for anyone with local access to the machine.
+
 
 --
 
