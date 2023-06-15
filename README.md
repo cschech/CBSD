@@ -143,6 +143,8 @@ a reasonably good thing to try." - Ray Solomonoff
 
 PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
 
+OpenBSD "syspatch" is at the same level of security and correctness analysis as "kernel_reorder". They represent critical transactions on the system.
+
 # My initial bug report to the OpenBSD mailing list:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
