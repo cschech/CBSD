@@ -1,2 +1,10 @@
 cat /bsd | strings -td | grep "bios thinks we're in a 64 bit slot, but we aren't"
 17973724 %s: bios thinks we're in a 64 bit slot, but we aren't
+aapic.o
+     79 WVRW1
+--
+  23971 %s: board self-diagnostics failed!
+  24009 %s: unsupported chip revision: %x
+  24044 %s: bios thinks we're in a 64 bit slot, but we aren't
+  24098 %s: chip initialization failed
+  24130 %s: failed to read station address
