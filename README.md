@@ -6,7 +6,7 @@ Every time a new version ("release" in OpenBSD parlance) of Unix is created, it 
 
 The lack of such checks allows for many avenues for adversarial actors to replace an operating system kernel.
 
-The core problem with OpenBSD's implementation of kernel reordering is that the operating system is viewed at the link-level as a collection of components and as a monolithic binary during runtime which are two seperate levels of abstraction, leading to this security flaw, where attempting to relink at runtime without checking that the objects match the stamp from the release allows arbitary relinking of an arbitrary computer program with the same link structure.
+The core problem with OpenBSD's implementation of kernel reordering is that the operating system is viewed at the link-level as a collection of components and as a monolithic binary during runtime which are two seperate levels of abstraction, leading to this security flaw, where attempting to relink at runtime without checking that the objects match the stamp from the release allows relinking of an arbitrary computer program with the same link structure.
 
 If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, this security vulnerability would be closed.
 
