@@ -24,7 +24,7 @@ Keeping all link-reordering as a purely-mathematical segment-shuffling operation
 
 OpenBSD's historical focus on isolation from attacks from outside the system neglects attacks from below or inside, which require a focus on both system and data integrity. IBM holds extensive patents in this area (automatic tagging of programs and data when they are added to the system, etc.). Security through obscurity and Unix's obfuscated build process is not helpful when it comes to a system that is widely-deployed on a range of critical infrastructure. A safe design is crucial, as well as careful study of prior work.
 
-The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "COMP" install set is a ready-made off-the-shelf trojan horse in and of itself.
+The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "COMP" install set is a ready-made off-the-shelf trojan horse in and of itself, paired with the fact that in the default install the system runs the reordering routine automatically immediately at the end of the install process and then again periodically at boot with no possibility of user intervention or a prompt to enable or disable the feature, as with other automatic startup options for X11 startup or SSH.
 
 Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
 
