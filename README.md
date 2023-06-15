@@ -31,13 +31,15 @@ As of writing, distcc/linux clang would look to be a good candidate for trying t
 
 # Insufficient Workarounds
 
+OPSEC, COMSEC, encryption:
+
 Keeping the kernel offline and using one-time pads? Better keep them completely offline and never reuse or publish them.
 
-A kernel which is totally opaque to userspace and a reference monitor running in a separation kernel, etc.. WORM-storage-backed filesystems. 
+A kernel which is totally opaque to userspace and a reference monitor running in a separation kernel, etc.. WORM-storage-backed filesystems.
 
 Running a link kit and a provided binary, and a recompiled version in parallel and noting any differences in behaviour. Kernels can trigger processes in userspace and vice-versa by exercising obscure code paths.
 
-Incentives for tampering or leaks are pervasive. Any detectable strings inside the decoded kernel are vectors for attacks. 
+Incentives for tampering or leaks are pervasive. Any detectable strings inside the decoded kernel are vectors for attacks. It has to be decoded *somewhere*. 
 
 Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
