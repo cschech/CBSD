@@ -14,9 +14,14 @@ In summary, the link kit distributed with OpenBSD when paired with the existing 
 
 The source of OpenBSD is tied to a specific bundled clang implementation that is self-hosted. Lack of an external build environment with first-party support makes it impossible to verify if the link kit provided with OpenBSD is not a trojan horse. GCC support was also dropped and eliminated from the source tree. Having both GCC and clang support for the kernel build process (that is self-hosted) would be an excellent first step toward support for a portable build environment. 
 
-Portable bootstrapping from a pure POSIX environment is instead desirable.
 
-Cf. https://dwheeler.com/trusting-trust/
+Portable bootstrapping from a pure POSIX environment or a mobile programming system is instead desirable.
+
+
+Cf. 
+
+https://dwheeler.com/trusting-trust/
+https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=31bb1c092dba2b1a692b87cd2ff859bb7ce735f7
 
 --
 
