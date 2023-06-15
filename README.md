@@ -2,7 +2,9 @@ Wed Jun 14 23:40:21 UTC 2023
 
 # Abstract 
 
-Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on. 
+Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on.
+
+Rhetorically, where is your vault reference copy of the Unix kernel now?
 
 This avoids a circular specification of the operating system where it is defined as its implementation, which in the case of the OpenBSD kernel link kit, is ELF machine code. The problem of inversion from the ELF machine code back to the C source code is in general undecidable, as the Post correspondence problem is very well-understood. (https://www.cis.upenn.edu/~jean/gbooks/PCPh04.pdf). 
 
@@ -37,7 +39,7 @@ Keeping the kernel offline and using one-time pads? Better keep them completely 
 
 A kernel which is totally opaque to userspace and a reference monitor running in a separation kernel, etc.. WORM-storage-backed filesystems.
 
-Running a link kit and a provided binary, and a recompiled version in parallel and noting any differences in behaviour, versus a complete clean-room reimplementation from the POSIX spec on diverse hardware via triple modular redundancy? Out of reach for most individuals. Kernels can trigger processes in userspace and vice-versa by exercising obscure code paths. A complete cleanroom Unix implementation in both hardware and software in complete secrecy is akin to the N-th country problem. Atomic secrets leaked rather quickly and that was with utmost secrecy and a state of war. Better not run existing potentially-compromised versions of Unix on your rocket guidance computer, for instance. 
+Running a link kit and a provided binary, and a recompiled version in parallel and noting any differences in behaviour, versus a complete clean-room reimplementation from the POSIX spec on diverse hardware via triple modular redundancy? Out of reach for most individuals. Kernels can trigger processes in userspace and vice-versa by exercising obscure code paths. A complete cleanroom Unix implementation in both hardware and software in complete secrecy is akin to the Nth country problem in terms of scope and cost. Atomic secrets leaked rather quickly and that was with utmost secrecy and a state of war. Better not run existing potentially-compromised versions of Unix on your rocket guidance computer, for instance. 
 
 Incentives for tampering or leaks are pervasive. Any detectable strings inside the decoded kernel are vectors for attacks. It has to be decoded *somewhere*. 
 
