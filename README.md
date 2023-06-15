@@ -35,6 +35,10 @@ The link kit distributed with OpenBSD when paired with the existing reorder_kern
 
 https://www.rand.org/pubs/papers/P3544.html
 
+# Userland back doors
+
+A patch process for the link kit can be embedded in any of the applications available for OpenBSD which when run as root, surreptitiously patches the kernel with a payload that is relinked by kernel_reorder. 
+
 # Areas for Further Study
 
 The source of OpenBSD is tied to a specific bundled clang implementation that is self-hosted. Lack of an external build environment with first-party support makes it impossible to verify if the link kit provided with OpenBSD is not a trojan horse. GCC support was also (conspicuously) dropped and eliminated from the source tree. Having both GCC and clang support for the kernel build process (that is self-hosted) would be an excellent first step toward support for a portable build environment hosted externally to the system.
