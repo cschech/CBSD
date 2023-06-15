@@ -93,11 +93,14 @@ A single-level store changes this model by extending VM from handling just a pag
 
 https://en.wikipedia.org/wiki/Single-level_store
 
-# The Teensy Files
+The Teensy Files:
 
-(cue X-Files music and title card)
+(cue X-Files music and title card) http://www.muppetlabs.com/~breadbox/software/tiny/ 
 
-http://www.muppetlabs.com/~breadbox/software/tiny/
+Kolmogorov Complexity (undecidable)
+
+https://raysolomonoff.com/publications/z138.pdf
+
 
 # My initial bug report to Theo:
 
