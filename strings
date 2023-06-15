@@ -1,3 +1,4 @@
+cat bsd | strings | sort | uniq -c
   16 				
    3 					
    3 						
