@@ -141,9 +141,13 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
+# Footnotes
+
 PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
 
 OpenBSD "syspatch" is at the same level of security and correctness analysis as "kernel_reorder". They represent critical transactions on the system.
+
+Filesystems using optical WORM robotic disc libraries existed at the time of Plan 9's development (Ken's filesystem). Optical drives have notably disappeared from consumer devices despite having the same WORM property.
 
 # My initial bug report to the OpenBSD mailing list:
 
