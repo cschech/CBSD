@@ -70,10 +70,10 @@ id=`basename "${d}"`
 ost="CBSD"
 osr="0.02"
 
-sha512 -h /var/db/obj.${id}.sha512 *.o lorder 
-sha512 -h /var/db/kernel.${id}.sha512 bsd
-sha256 -h /var/db/obj.${id}.sha256 *.o lorder
-sha256 -h /var/db/kernel.${id}.sha256 bsd
+sha512 -h /var/db/obj.${id}.sha512 *.o lorder makegap.sh
+sha512 -h /var/db/kernel.${id}.sha512 bsd makegap.sh
+sha256 -h /var/db/obj.${id}.sha256 *.o lorder makegap.sh
+sha256 -h /var/db/kernel.${id}.sha256 bsd makegap.sh
 
 cat >vers.c <<eof
 #define STATUS ""			/* release */
