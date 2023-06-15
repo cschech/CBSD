@@ -169,7 +169,7 @@ a reasonably good thing to try." - Ray Solomonoff
    
 4. Bruce Sterling already wrote a sci-fi book where a giant laser weapon runs OpenBSD, IIRC.
 
-[6] Is the random reordering really random?
+[6] Is the random reordering really random? There's almost no entropy when the install media is running on a system initially, and it doesn't proactively collect entropy from the user.
 
 https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html
 
