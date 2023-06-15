@@ -165,8 +165,9 @@ a reasonably good thing to try." - Ray Solomonoff
 [5] Light-hearted fictional scenarios that are enjoyable and illustrative of some of the problems:
 
 1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970).
-2. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned space launch systems, military command and control ("Wargames") or life support systems on space stations or space vehicles ("2001: A Space Odyssey", with a twist).
-3. Bruce Sterling already wrote a sci-fi book where a giant laser weapon runs OpenBSD, IIRC.
+2. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned) space launch systems, military command and control ("Wargames") or life support systems on manned space stations or space vehicles ("2001: A Space Odyssey", with a twist), or the guidance systems or arming systems for nuclear warheads, or in commercial aviation, or self-driving vehicles.
+   
+4. Bruce Sterling already wrote a sci-fi book where a giant laser weapon runs OpenBSD, IIRC.
 
 [6] Is the random reordering really random?
 
