@@ -14,7 +14,7 @@ The link kit being embedded inside of the COMP installation set makes it impossi
 
 If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, for all kernel objects /usr/share/relink/kernel/$BUILD, this security vulnerability would be closed.
 
-Keeping all link-reordering as a purely-mathematical segment-shuffling operation on a reference kernel binary and the discarding of the link kit concept entirely is desirable as a a complete alternative if polymorphic kernels are what is wanted.
+Keeping all link-reordering as a purely-mathematical segment-shuffling operation on a reference kernel binary and the discarding of the link kit concept entirely is desirable as a a complete alternative if polymorphic kernels are what is wanted. OpenBSD's stance on firmware blobs is ironic because the link kit is in-effect a firmware blob representing OpenBSD.
 
 
 # clang build process
