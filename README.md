@@ -138,6 +138,8 @@ Tandem hosts:
 
 https://en.wikipedia.org/wiki/Tandem_Computers
 
+Redundancy and the shared-nothing approach.
+
 Kolmogorov Complexity is undecidable:
 
 http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
