@@ -97,14 +97,13 @@ The Teensy Files:
 
 (cue X-Files music and title card) http://www.muppetlabs.com/~breadbox/software/tiny/ 
 
+Kolmogorov Complexity is undecidable:
 
-Kolmogorov Complexity qua inductive inference (undecidable):
-
-https://raysolomonoff.com/publications/z138.pdf
+http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 
 "None of the computing machine simulations of organic evolution have
 attempted representations of organisms using minimal codes, and it seems like
-a reasonably good thing to try."
+a reasonably good thing to try." - Ray Solomonoff
 
 # My initial bug report to Theo:
 
