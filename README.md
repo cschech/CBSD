@@ -165,11 +165,10 @@ a reasonably good thing to try." - Ray Solomonoff
 
 [2] OpenBSD "syspatch" is at the same level of security and correctness analysis as "kernel_reorder". They represent critical transactions on the system. Transaction processing systems with ultra-high-reliability have been studied extensively (Tandem, DB2, Journaling ISAM databases where transactions are physically written out in the order that they occur). These are not historical artifacts, Tandem hosts are still running in the Canadian commercial banking infrastructure, for instance.
 
+Transaction processing systems where ultra-high-reliability and data loss are not allowed are an excellent reference (the "shared-nothing" approach):
+
 "Tandem's NonStop systems use a number of independent identical processors and redundant storage devices and controllers to provide automatic high-speed "failover" in the case of a hardware or software failure. To contain the scope of failures and of corrupted data, these multi-computer systems have no shared central components, not even main memory. Conventional multi-computer systems all use shared memories and work directly on shared data objects. Instead, NonStop processors cooperate by exchanging messages across a reliable fabric, and software takes periodic snapshots for possible rollback of program memory state."
 
-^
-
-This is the way to proceed.
 
 [3] Filesystems using optical WORM robotic disc libraries existed at the time of Plan 9's development (e.g. "Ken's filesystem"). Optical drives have notably disappeared from consumer devices despite having the same WORM property, and of course now we also have blockchains, ZFS, and IPFS.
 
