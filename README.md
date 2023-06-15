@@ -65,6 +65,8 @@ Obit., contains pertinent mention of isolation compared with integrity:
 
 https://www.cs.virginia.edu/~evans/cs551/saltzer/
 
+https://en.wikipedia.org/wiki/Single-level_store
+
 # My initial bug report to Theo:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
