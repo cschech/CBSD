@@ -121,7 +121,6 @@ The persistent object concept was first introduced by Multics in the mid-1960s, 
 
 A single-level store changes this model by extending VM from handling just a paging file to a new concept where the "main memory" is the entire secondary storage system. In this model there is no need for a file system separate from the memory, programs simply allocate memory as normal and that memory is invisibly written out to storage and retrieved as required. The program no longer needs code to move data to and from secondary storage. The program can, for instance, produce a series of business cards in memory, which will invisibly be written out. When the program is loaded again in the future, that data will immediately re-appear in its memory. *And as programs are also part of this same unified memory, restarting a machine or logging in a user makes all of those programs and their data reappear.*" 
 
-
 https://en.wikipedia.org/wiki/Single-level_store
 
 The Teensy Files:
@@ -130,6 +129,10 @@ The Teensy Files:
 
 http://www.muppetlabs.com/~breadbox/software/tiny/ 
 
+Plan 9, Inferno:
+
+No one is doing systems research and development anymore.
+
 Kolmogorov Complexity is undecidable:
 
 http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
@@ -137,10 +140,6 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 "None of the computing machine simulations of organic evolution have
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
-
-Plan 9, Inferno:
-
-No one does systems research and development anymore.
 
 # My initial bug report to Theo:
 
