@@ -39,8 +39,7 @@ https://www.rand.org/pubs/papers/P3544.html
 
 A patch process for the link kit can be embedded in any of the applications available for OpenBSD which when run as root, surreptitiously patches the kernel with a payload that is relinked by kernel_reorder. 
 
-There is no reason that the kernel could not contain a routine which reorders itself after boot, then jumps to the new copy, completely in kernel space. Leaking a kernel function into the rc script with a bunch of other compiler and linker scaffolding is premature optimization.
-
+There should be no mechanism by which this can happen.
 
 # Areas for Further Study
 
