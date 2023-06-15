@@ -39,7 +39,7 @@ https://www.rand.org/pubs/papers/P3544.html
 
 A patch process for the link kit can be embedded in any of the applications available for OpenBSD which when run as root, surreptitiously patches the kernel with a payload that is relinked by kernel_reorder. 
 
-There should be no mechanism by which this can happen, as well as there being no correspondence between the link kit and the kernel to begin with, as initially supplied. Relinking should happen at kernel compilation time only.
+There should be no mechanism by which this can happen, when a build from source could just proceed at first boot instead, discarding the objects.
 
 # Areas for Further Study
 
