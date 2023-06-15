@@ -129,7 +129,7 @@ http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
-# Plan 9, Inferno
+Plan 9, Inferno:
 
 No one does systems research and development anymore.
 
