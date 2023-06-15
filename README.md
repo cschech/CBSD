@@ -8,6 +8,8 @@ Every time a new version ("release" in OpenBSD parlance) of Unix is created, it 
 
 This avoids a circular specification of the operating system where it is defined as its implementation, which in the case of the OpenBSD kernel link kit, is ELF machine code. The problem of inversion from the ELF machine code back to the C source code is in general undecidable as the Post correspondence problem is very well-understood (https://www.cis.upenn.edu/~jean/gbooks/PCPh04.pdf). Furthermore, existing C compiler also lacks type information inside its intermediate representation, and payloads (of course) may be arbitrarily encoded inside or outside the kernel.
 
+# Insecurity of the OpenBSD 7.3/amd64 distribution
+
 As a demonstrative example the author provides (in this repository) a new version of the BSD operating system kernel, both in binary form and as a link kit (CBSD) that is not an OpenBSD kernel but which, if installed as a link kit, will be reordered by the OpenBSD 7.3 release reorder_kernel utility as it currently exists (which does not check that it has been stamped) and installed as a new kernel during the next boot, and a patch to the script that creates the new version of BSD during the build which adds such a stamp, closing the vulnerability in an online system, assuming a corresponding check is performed before executing reorder_kernel. However the root-of-trust problem with the machine code in the initial link kit (and initial kernel from the release media) still stands. 
 
 As the objects provided in the link kit are opaque they should (at a minimum) be discarded and the system built from source, but it is not sufficient by itself in a self-hosted environment in the general case when considering sophisticated attackers. 
