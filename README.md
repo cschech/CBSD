@@ -145,9 +145,9 @@ a reasonably good thing to try." - Ray Solomonoff
 
 PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
 
-OpenBSD "syspatch" is at the same level of security and correctness analysis as "kernel_reorder". They represent critical transactions on the system.
+OpenBSD "syspatch" is at the same level of security and correctness analysis as "kernel_reorder". They represent critical transactions on the system. Transaction processing systems with ultra-high-reliability have been studied extensively (Tandem, DB2, Journaling ISAM databases where transactions are physically written out in the order that they occur). These are not historical artifacts, Tandem hosts are still running in the Canadian commercial banking infrastructure, for instance.
 
-Filesystems using optical WORM robotic disc libraries existed at the time of Plan 9's development (Ken's filesystem). Optical drives have notably disappeared from consumer devices despite having the same WORM property.
+Filesystems using optical WORM robotic disc libraries existed at the time of Plan 9's development (e.g. Ken's filesystem). Optical drives have notably disappeared from consumer devices despite having the same WORM property, and of course now we also have blockchains, ZFS, and IPFS.
 
 # My initial bug report to the OpenBSD mailing list:
 
