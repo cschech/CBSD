@@ -47,7 +47,7 @@ Cf. https://www.governmentattic.org/18docs/Hist_US_COMSEC_Boak_NSA_1973u.pdf
 
 Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
-Hybrid systems are not enough, for the same reason untrusted systems are.
+Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation.
 
 # Summary 
 
@@ -117,7 +117,9 @@ https://en.wikipedia.org/wiki/Single-level_store
 
 The Teensy Files:
 
-(cue X-Files music and title card) http://www.muppetlabs.com/~breadbox/software/tiny/ 
+(cue X-Files music and title card) 
+
+http://www.muppetlabs.com/~breadbox/software/tiny/ 
 
 Kolmogorov Complexity is undecidable:
 
