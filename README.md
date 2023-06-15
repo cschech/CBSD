@@ -62,3 +62,11 @@ https://www.cs.virginia.edu/~evans/cs551/saltzer/
 # My initial bug report to Theo:
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
+
+
+# Periodic Table of the Kernel Objects
+
+Each kernel object in the link kit which matches a linked kernel binary is an ELF object with a set of properties. It is possible enumerate all possible reorderings of the kernel. Remember, the random gap isn't random, it's fixed every time a build is made.
+
+
+
