@@ -133,6 +133,10 @@ Plan 9, Inferno:
 
 No one is doing systems research and development anymore.
 
+Tandem hosts:
+
+https://en.wikipedia.org/wiki/Tandem_Computers
+
 Kolmogorov Complexity is undecidable:
 
 http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
