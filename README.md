@@ -18,7 +18,6 @@ Keeping all link-reordering as a purely-mathematical segment-shuffling operation
 
 OpenBSD's historical focus on attacks from outside the system neglects attacks from below or inside.
 
-
 # clang build process
 I have extracted the compilation phase and linking phase to make them not depend on BSD make as a proof of concept of how to start to move away from provided components, but a working GCC build is needed for full diverse compilation.
 
