@@ -1,10 +1,10 @@
+# It's 9 p.m., where is your vault reference copy of the Unix kernel now?
+
 Thu Jun 15 17:01:51 UTC 2023
 
 # Abstract 
 
 Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on.
-
-Rhetorically, where is your vault reference copy of the Unix kernel now?
 
 This avoids a circular specification of the operating system where it is defined as its implementation, which in the case of the OpenBSD kernel link kit, is ELF machine code. The problem of inversion from the ELF machine code back to the C source code is in general undecidable, as the Post correspondence problem is very well-understood. (https://www.cis.upenn.edu/~jean/gbooks/PCPh04.pdf). 
 
