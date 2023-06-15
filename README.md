@@ -10,8 +10,7 @@ The core problem with OpenBSD's implementation of kernel reordering is that the 
 
 If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, for all kernel objects /usr/share/relink/kernel/$BUILD, this security vulnerability would be closed.
 
-In summary, the link kit distributed with OpenBSD when paired with the existing reorder_kernel function (which lacks such a check) as of OpenBSD 7.3 is a rootkit for anyone with local access to the machine.
-
+In summary, the link kit distributed with OpenBSD when paired with the existing reorder_kernel function (which lacks such a check) as of OpenBSD 7.3 is a rootkit for anyone with local access to the machine. A link kit that is stamped does not suffer from this vulnerability.
 
 --
 
