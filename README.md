@@ -12,6 +12,8 @@ If the OpenBSD kernel_reorder utility instead checked the stamp created when the
 
 In summary, the link kit distributed with OpenBSD when paired with the existing reorder_kernel function (which lacks such a check) as of OpenBSD 7.3 allows the installation of a rootkit for anyone with local access to the machine, and even complete replacement or destruction of the operating system. A link kit that is stamped does not suffer from this class of vulnerability.
 
+# Areas for further study
+
 The source of OpenBSD is tied to a specific bundled clang implementation that is self-hosted. Lack of an external build environment with first-party support makes it impossible to verify if the link kit provided with OpenBSD is not a trojan horse. GCC support was also dropped and eliminated from the source tree. Having both GCC and clang support for the kernel build process (that is self-hosted) would be an excellent first step toward support for a portable build environment. 
 
 
