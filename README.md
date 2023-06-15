@@ -149,7 +149,7 @@ https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
 # Request for comments
 
-Please provide any commentary or feedback on this essay or the source repository or my bug reports, and suggestions or ideas for further development (pull requests can go to "comments.txt").
+Please provide any commentary or feedback on this essay or the source repository or my bug reports, and suggestions or ideas for further development (pull requests can go to the "comments" file).
 
 --
 
