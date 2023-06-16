@@ -39,6 +39,7 @@ Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Sym
 < foo > denotes a command
 
 In /etc/rc
+```
 
 Precondition 1:
 - Assumes that the SHA512 and SHA256 algorithms and their implementations in the system sha256 and sha512 programs are trusted to execute correctly on a host machine 
@@ -59,11 +60,10 @@ IF obj.{id}.sha512 AND kernel.{id}.sha512 AND obj.{id}.sha256 AND kernel.{id}.sh
 
 THEN   
    <reorder_kernel>
-
 ELSE
   <log error>
   <exit 1>
-
+```
 
 Either a valid kernel will be relinked (if all preconditions hold) or an error will be logged and an exit status of 1 will occur in /etc/rc, both newvers.sh
 
