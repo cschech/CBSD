@@ -262,4 +262,4 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
 "Track/Level Requirements 	            Focus
  Build L3 	 Hardened build platform 	Tampering during the build"
 
-I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track?
+I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track as I reached the same conclusion after noticing the problem three years ago?
