@@ -241,3 +241,6 @@ All software problems can be fixed, however.
 # Addendum
 
 The official response from Theo de Raadt is that the sha256 sums solve nothing, and that I am worried about "second or third-order problems", so I guess it doesn't matter.
+
+https://marc.info/?l=openbsd-bugs&m=168688579123005&w=2
+
