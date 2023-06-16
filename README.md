@@ -92,6 +92,12 @@ Translating this into say, Z notation, without a team of logicians and computer 
 
 Disabling the existing process by removing it from the /etc/rc file, and rebuilding the kernel from source (avoids trivial rootkits in the provided link kit objects, but not sophisticated rootkits throughout the entire system as it is self-hosting). Disabling the existing process inside the install image. Deleting the link kit from the COMP install set and providing a signed copy of all install set images, contained inside the installation media. Requires correct remastering of the installation media. The signatures not being included inside the install media to begin with is suspect. That is a trivial patch to provide assurance against tampering, as the complete image would be signed as official, as well as its components, verifiable at install-time. In a stand-alone system or when bootstrapping an OpenBSD environment this is not possible unless done manually at present.
 
+distcc and an automated build process developed independently from the provided self-hosted build would allow compilation to occur remotely.
+
+# Remote linking
+
+Removing the ability for OpenBSD to link objects by itself, and having them linked by a call to a remote machine (akin to distcc, distlink?) would eliminate the need for the system to capture its own elf components and link order/randomization information. Experts in the use of llvm's LLD can likely provide a quick solution here.
+
 # Removing the dependency on BSD make from the clang build process 
 
 Further steps toward a diverse build environment:
