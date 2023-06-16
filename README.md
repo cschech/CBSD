@@ -4,7 +4,7 @@ Thu Jun 15 17:01:51 UTC 2023
 
 # Abstract 
 
-Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on.
+Every time a new version ("release" in OpenBSD parlance) of Unix is created, it needs to be stamped as authentic, otherwise it's just a glorified computer worm susceptible to attack as indicated by Paul Karger (the topic of Dennis Richie's popular ACM lecture) masquerading as an operating system that people are trying to do genetic engineering (or perhaps hopelessly, analysis) on. To avoid digressions into "trust of trust" this needs to be treated as a systems engineering, computer security, and supply chain problem and a technical computing problem simultaneously, and given an interdisciplinary treatment, as the Unix kernel (as traditionally implemented) defines the entire security domain of a running system[1].
 
 This avoids a circular specification of the operating system where it is defined as its implementation, which in the case of the OpenBSD kernel link kit, is ELF machine code. The problem of inversion from the ELF machine code back to the C source code is in general undecidable as the Post correspondence problem is very well-understood (https://www.cis.upenn.edu/~jean/gbooks/PCPh04.pdf). Furthermore, the existing C compiler also lacks type information inside its intermediate representation, and payloads (of course) may be arbitrarily encoded inside or outside the kernel.
 
@@ -34,9 +34,7 @@ The current implementation also makes the strong assumption that remote holes wi
 
 Manual editing of the install image configuration scripts or tedious work inside the BSD.RD environment is required for a user to disable the feature, yet still install the rest of the complete system, and entails remastering of the installation images, if an existing OpenBSD environment is not available.
 
-Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5):
-
-"[...] I shall argue that the problems with conventional systems have their roots in the use of a security kernel which attempts to impose a single security policy over the whole system. "
+[1] Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5): "[...] I shall argue that the problems with conventional systems have their roots in the use of a security kernel which attempts to impose a single security policy over the whole system. "
 
 
 # Approximately correct protocol to make reorder_kernel transactional (pseudocode)
