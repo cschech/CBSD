@@ -12,6 +12,8 @@ SLSA provenance (https://slsa.dev/spec/v0.1/levels) would be a path toward (part
 
 This essay limits the topic to auditability and security-hardening (tamper resistance) of the build process and not higher-level theoretical limitations and practical problems in compiler design and formal verification.
 
+Keywords: Unix, OpenBSD, iterated build processes, security evaluation, SLSA
+
 # Insecurity of the OpenBSD 7.3/amd64 distribution
 
 As a demonstrative example the author provides (in this repository) a new version of the BSD operating system kernel, both in binary form and as a link kit (CBSD) that is not an OpenBSD kernel but which, if installed as a link kit, will be reordered by the OpenBSD 7.3 release reorder_kernel utility as it currently exists (which does not check that it has been stamped) and installed as a new kernel during the next boot, and a patch to the script that creates the new version of BSD during the build which adds such a stamp, closing the vulnerability in an online system (with or without iterated builds), assuming a corresponding check is performed before executing reorder_kernel. However the root-of-trust problem with the machine code in the initial link kit (and initial kernel from the release media) still stands. 
