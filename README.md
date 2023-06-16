@@ -20,7 +20,7 @@ The core problem with OpenBSD's implementation of kernel reordering is that the 
 
 With no or limited knowledge of computer programming it is trivial to introduce corrupted objects which while not trojan horses will instead crash the system in a myriad of unexpected ways, or by modifying compiler flags from an official release using the build instructions. Sophisticated adversaries can introduce arbitrary revisions to OpenBSD.
 
-The link kit being embedded inside of the COMP installation set makes it impossible to verify the compiler binaries independently from the link kit during installation. Lack of signatures for the installation sets on the installation media make it impossible to verify the installation sets from the installation media alone. Immediately reordering the kernel on boot makes the system polymorphic generally. Architectural cross-cutting of concerns is problematic here for objects that should be clearly separated.
+The link kit being embedded inside of the "base" installation set makes it impossible to verify the compiler binaries independently from the link kit during installation. Lack of signatures for the installation sets on the installation media make it impossible to verify the installation sets from the installation media alone. Immediately reordering the kernel on boot makes the system polymorphic generally. Architectural cross-cutting of concerns is problematic here for objects that should be clearly separated.
 
 If the OpenBSD kernel_reorder utility instead checked the stamp created when the release was created, for all kernel objects /usr/share/relink/kernel/$BUILD, this security vulnerability would be closed. Right now it is security theatre at best (Why is more than one random reordering needed or a periodic process at each boot which silently makes objects in the link kit reappear? It doesn't make it any more random assuming the kernel is correctly isolated to begin with), additionally, entropy is extremely low when performing an install, the process can't be disabled, and it introduces all the vulnerabilities and integrity problems outlined, when it can also be done as a purely mathematical process using the initial entry points and sizes of the segments. Using such data allows for an attacker to scan the binary stored on the system, identify the segments using strings from the objects that are preserved, and compute the entry points anyway, because the internal structure of the objects is not reordered, akin to a game of "Battleship" or "Sudoku". The random gap is also present on the filesystem. Because the link kit is a potential trojan horse itself it should never be linked and installed. Even a warning in the installer or an opt-out would not be troublesome to add.
 
@@ -28,7 +28,7 @@ Keeping all link-reordering as a purely-mathematical segment-shuffling operation
 
 OpenBSD's historical focus on isolation from attacks from outside the system neglects attacks from below or inside, which require a focus on both system and data integrity. IBM holds extensive patents in this area (automatic tagging of programs and data when they are added to the system, etc.). Security through obscurity and Unix's obfuscated build process is not helpful when it comes to a system that is widely-deployed on a range of critical infrastructure. A safe design is crucial, as well as careful study of prior work.
 
-The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "COMP" install set is a ready-made off-the-shelf trojan horse in and of itself, paired with the fact that in the default install the system runs the reordering routine automatically immediately at the end of the install process and then again periodically at boot with no possibility of user intervention or a prompt to enable or disable the feature, as with other automatic startup options for X11 startup or SSH. It is a lower-level analogue of syspatch operating outside of user control (paired with a lack of checksum verification on the objects).
+The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "base" install set is a ready-made off-the-shelf trojan horse in and of itself, paired with the fact that in the default install the system runs the reordering routine automatically immediately at the end of the install process and then again periodically at boot with no possibility of user intervention or a prompt to enable or disable the feature, as with other automatic startup options for X11 startup or SSH. It is a lower-level analogue of syspatch operating outside of user control (paired with a lack of checksum verification on the objects).
 
 Manual editing of the install image configuration scripts or tedious work inside the BSD.RD environment is required for a user to disable the feature, yet still install the rest of the complete system.
 
@@ -44,7 +44,7 @@ Precondition 1:
 - Assumes that the SHA512 and SHA256 algorithms and their implementations in the system sha256 and sha512 programs are trusted to execute correctly on a host machine 
 - Assumes newvers.sh creates sha512 and sha256 files for all components of the link kit, including makegap.sh and lorder and all .o files, and a separate file for the linked kernel from the build, at build time
 - Assumes that the initially distributed and installed link kit and checksums in /var/db have not been tampered with
-
+- Assumes that the post-install process populates the hashes for the link kit in the install's base set.
 Precondition 2:
 WHERE {id} is the ID generated by /usr/src/conf/newvers.sh [refer to version in this repository for example]
 FOR ALL FILES in /usr/share/relink/kernel/{id}/ 
@@ -59,7 +59,7 @@ Either a valid kernel will be relinked (if all preconditions hold) or an error w
 
 There are a lot of interacting components so a thorough implementation will take this into account, as well as correct bootstrapping and provenance for the install media's install sets and the installation media as a unit in itself. Also builds can be switched between, which isn't a concern of kernel_reorder but object and kernel integrity is.
 
-This would also require the addition of the relevant files to the link kit contents in the COMP install set (for the initial link kit).
+This would also require the addition of the relevant files to the link kit contents in the base install set (for the initial link kit).
      
 # Workarounds
 
@@ -235,5 +235,5 @@ Thu Jun 15 16:59:52 UTC 2023
 
 The unstated truth (or perhaps dirty secret) about the portability of self-hosted Unix and why Unix is such a highly polished gem (initially, anyway) is that it is the first synthetic analogue of a biological organism (with a self-reproduction process), with C being the portable assembly language. As such it is prone to the accumulation of "junk DNA" as well as "viral DNA"  (which might not actually be junk but could trigger or be triggered by another process). In this analogy, OpenBSD's kernel-reodering mechanism (as currently implemented with no integrity checks of object files) is "cancer". Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
 
-All software problems can be fixed.
+All software problems can be fixed, however.
 
