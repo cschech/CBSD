@@ -38,7 +38,7 @@ Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Sym
 ```
 < foo > denotes a command
 [ ... ] denotes a comment
-In /etc/rc
+In < /etc/rc >
 
 
 Precondition 1:
