@@ -244,8 +244,8 @@ Transaction processing systems where ultra-high-reliability and data loss are no
 
 [5] Light-hearted fictional scenarios that are enjoyable and illustrative of some of the problems:
 
-1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970).
-2. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned) space launch systems, military command and control ("Wargames") or life support systems on manned space stations or space vehicles ("2001: A Space Odyssey", with a twist), or the guidance systems or arming systems for nuclear warheads, or in commercial aviation, or self-driving vehicles.
+1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970) - maybe that was the reason for the massive speedup, it had access to its own unlinked ELF object code (j/k).
+3. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned) space launch systems, military command and control ("Wargames") or life support systems on manned space stations or space vehicles ("2001: A Space Odyssey", with a twist), or the guidance systems or arming systems for nuclear warheads, or in commercial aviation, or self-driving vehicles.
    
 4. Bruce Sterling already wrote a sci-fi book where a laser weapon runs OpenBSD, "The Zenith Angle".
 
