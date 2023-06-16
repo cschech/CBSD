@@ -247,3 +247,7 @@ The official response from Theo de Raadt is that the sha256 sums solve nothing, 
 
 https://marc.info/?l=openbsd-bugs&m=168688579123005&w=2
 
+The official spec of SLSA 1.0 specifically states that a hardend build platform is the desired highest state of compliance (ironically):
+
+https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
+
