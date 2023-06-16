@@ -38,6 +38,8 @@ Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Sym
 ```
 < foo > denotes a command
 [ ... ] denotes a comment
+{bar} denotes a parameter
+ 
 BEGIN is the initial state of the subsystem under consideration
 
 Pseudocode follows (this can likely be implemented in prolog or similar or verfied/implemented in automated theorem provers like Coq using Hoare logic)
