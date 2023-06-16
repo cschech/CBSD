@@ -220,6 +220,11 @@ Although this is interesting:
 attempted representations of organisms using minimal codes, and it seems like
 a reasonably good thing to try." - Ray Solomonoff
 
+What was the Soviet equivalent of Unix? They obviously had far superior tooling in the 1980s to develop Buran as a fully-automated space shuttle:
+https://en.wikipedia.org/wiki/DRAKON
+
+I know from REFAL that they had a better version of LISP and a better compiler for it (Supercompilers, LLC).
+
 # Footnotes
 
 [1] PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
