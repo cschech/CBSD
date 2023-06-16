@@ -193,9 +193,11 @@ https://en.wikipedia.org/wiki/Tandem_Computers
 
 Redundancy and the shared-nothing approach.
 
-Kolmogorov Complexity is undecidable:
+Kolmogorov Complexity is undecidable so using probability and information theory and statistics to find worms is a dead-end:
 
 http://alexander.shen.free.fr/library/Zvonkin_Levin_70.pdf
+
+Although this is interesting:
 
 "None of the computing machine simulations of organic evolution have
 attempted representations of organisms using minimal codes, and it seems like
@@ -223,7 +225,7 @@ Transaction processing systems where ultra-high-reliability and data loss are no
 1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970).
 2. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned) space launch systems, military command and control ("Wargames") or life support systems on manned space stations or space vehicles ("2001: A Space Odyssey", with a twist), or the guidance systems or arming systems for nuclear warheads, or in commercial aviation, or self-driving vehicles.
    
-4. Bruce Sterling already wrote a sci-fi book where a laser weapon runs OpenBSD, IIRC.
+4. Bruce Sterling already wrote a sci-fi book where a laser weapon runs OpenBSD, "The Zenith Angle".
 
 [6] Is the random reordering really random? There's almost no entropy when the install media is running on a system initially, and it doesn't proactively collect entropy from the user.
 
@@ -262,4 +264,4 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
 "Track/Level Requirements 	            Focus
  Build L3 	 Hardened build platform 	Tampering during the build"
 
-I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track as I reached the same conclusion after noticing the problem three years ago?
+I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track as I reached the same conclusion after noticing the problem three years ago? A formal approach to security hardening is required for software systems which are self-hosting, generally.
