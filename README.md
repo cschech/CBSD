@@ -8,7 +8,7 @@ Every time a new version ("release" in OpenBSD parlance) of Unix is created, it 
 
 This avoids a circular specification of the operating system where it is defined as its implementation, which in the case of the OpenBSD kernel link kit, is ELF machine code. The problem of inversion from the ELF machine code back to the C source code is in general undecidable as the Post correspondence problem is very well-understood (https://www.cis.upenn.edu/~jean/gbooks/PCPh04.pdf). Furthermore, the existing C compiler also lacks type information inside its intermediate representation, and payloads (of course) may be arbitrarily encoded inside or outside the kernel.
 
-SLSA3 provenance would be a path toward (partial) assurance for official releases in lieu of a clean-room implementation of a build environment, but at present OpenBSD is still self-hosting and self-bootstrapping from a machine code kernel of unknown provenance.
+SLSA provenance (https://slsa.dev/spec/v0.1/levels) would be a path toward (partial) assurance for official releases in lieu of a clean-room implementation of a build environment ("SLSA4"), but at present OpenBSD is still self-hosting and self-bootstrapping from a machine code kernel of unknown provenance. Before kernel reordering was introduced it had a tamper-resistant build process and thus was at a higher level of SLSA compliance than it is now. In the past, GCC support was also present so bootstrapping a build from another environment was less difficult.
 
 # Insecurity of the OpenBSD 7.3/amd64 distribution
 
