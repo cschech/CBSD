@@ -112,7 +112,7 @@ Mistakes have been made (e.g. the known backdoor in TrueCrypt).
 
 Hybrid systems are not enough, for the same reason untrusted systems are, lacking a clean-room kernel implementation, and with lack of a trusted compiler, and a trusted build environment which is not self-hosted by the kernel.
 
-Stand-alone or tandem sites with trusted administrators are required (Dieselgate). Any old vendor can look good during an audit with perfect build orchestration and then flip a switch and turn off all the protections.
+Stand-alone site(s) with trusted administrator(s) are required. Any old vendor can look good during an audit with perfect build orchestration and by the same token then flip a switch and turn off all the protections if having reached that level of automation.
 
 # Summary 
 
