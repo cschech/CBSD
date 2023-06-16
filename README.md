@@ -94,7 +94,7 @@ distcc and an automated build process developed independently from the provided 
 
 # Remote linking
 
-Removing the ability for OpenBSD to link objects by itself, and having them linked by a call to a remote machine (akin to distcc, distlink?) would eliminate the need for the system to capture its own elf components and link order/randomization information. Experts in the use of llvm's LLD can likely provide a quick solution here.
+Removing the ability for OpenBSD to link objects by itself, and having them linked by a call to a remote machine (akin to distcc, distlink?) would eliminate the need for the system to capture its own elf components and link order/randomization information. Experts in the use of llvm's LLD can likely provide a quick solution here. Setting up a build environment on say, Debian 11 and ksh, and seeing if the linking and compilation phases return sucessfully would be useful.
 
 # Removing the dependency on BSD make from the clang build process 
 
