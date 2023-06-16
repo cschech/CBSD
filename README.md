@@ -34,6 +34,9 @@ Manual editing of the install image configuration scripts or tedious work inside
 
 Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
 
+"[...] I shall argue that the problems with conventional systems have their roots in the use of a security kernel which attempts to impose a single security policy over the whole system. "
+
+
 # Approximately correct protocol to make reorder_kernel transactional (pseudocode)
 ```
 < foo > denotes a command
