@@ -75,6 +75,8 @@ Either a valid kernel will be relinked (if all preconditions hold) or an error w
 There are a lot of interacting components so a thorough implementation will take this into account, as well as correct bootstrapping and provenance for the install media's install sets and the installation media as a unit in itself. Also builds can be switched between, which isn't a concern of kernel_reorder but object and kernel integrity is. Relinking will fail if such a switch occurs.
 
 This would also require the addition of the relevant files to the link kit contents in the base install set (for the initial link kit) to simplify the implementation and limit reliance on online scripting.
+
+I would like to expand from this single example problem to a similar pseudocode specification of the complete OpenBSD system, it could likely serve for the development of a future formally-verified version of OpenBSD.
      
 # Workarounds
 
