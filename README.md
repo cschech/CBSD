@@ -237,7 +237,7 @@ https://en.wikipedia.org/wiki/DRAKON
 
 I know from REFAL that they had a better version of LISP and a better compiler for it (Supercompilers, LLC).
 
-# Footnotes
+# Additional Footnotes
 
 [1] PAR2 and the Bittorrent protocol (have been around for two decades, cover a similar problem domain when file integrity (or durability in the case of erasure) of collections of objects is concerned). This isn't rocket science. Durability and integrity are both important aspects of system design.
 
@@ -252,16 +252,16 @@ Transaction processing systems where ultra-high-reliability and data loss are no
 
 [4] A simple counting argument suffices to show that signature-based methods alone are not enough to detect the presence of malware due to the possibility of arbitrary encoding and polymorphism. Cf. "tripwire".
 
-[5] We solved the byzantine generals problem (Bitcoin), but we can't get this right.
+[5] We solved the byzantine generals problem (Bitcoin), but we can't get this right, even though there's an open framework to try to provide a common ground for discussion is ridiculous.
 
-[5] Light-hearted fictional scenarios that are enjoyable and illustrative of some of the problems:
+[6] Light-hearted fictional scenarios that are enjoyable and illustrative of some of the problems:
 
 1. Putting a copy of the current unpatched version of OpenBSD inside the computer center from "Colossus: The Forbin Project" (1970) - maybe that was the reason for the massive speedup, it had access to its own unlinked ELF object code (j/k).
 3. Burning it into firmware that controls a nuclear power plant cooling pump (akin to Michael Mann's Blackhat), or using it to control commercial or government (manned or unmanned) space launch systems, military command and control ("Wargames") or life support systems on manned space stations or space vehicles ("2001: A Space Odyssey", with a twist), or the guidance systems or arming systems for nuclear warheads, or in commercial aviation, or self-driving vehicles.
    
 4. Bruce Sterling already wrote a sci-fi book where a laser weapon runs OpenBSD, "The Zenith Angle".
 
-[6] Is the random reordering really random? There's almost no entropy when the install media is running on a system initially, and it doesn't proactively collect entropy from the user.
+[7] Is the random reordering really random? There's almost no entropy when the install media is running on a system initially, and it doesn't proactively collect entropy from the user.
 
 https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html
 
@@ -296,6 +296,6 @@ The official spec of SLSA 1.0 specifically states that a hardend build platform 
 https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
 
 "Track/Level Requirements 	            Focus
- Build L3 	 Hardened build platform 	Tampering during the build"
+ Build L3 	  Hardened build platform 	 Tampering during the build"
 
 I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track as I reached the same conclusion after noticing the problem three years ago? A formal approach to security hardening is required for software systems which are self-hosting, generally.
