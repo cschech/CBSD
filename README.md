@@ -79,6 +79,9 @@ There are a lot of interacting components so a thorough implementation will take
 This would also require the addition of the relevant files to the link kit contents in the base install set (for the initial link kit) to simplify the implementation and limit reliance on online scripting.
 
 I would like to expand from this single example problem to a similar pseudocode specification of the complete OpenBSD system, it could likely serve for the development of a future formally-verified version of OpenBSD (at least it would be an example of literate programming even if not).
+
+Translating this into say, Z notation, without a team of logicians and computer scientists is definitely non-trivial. 
+(https://en.wikipedia.org/wiki/Z_notation)
      
 # Workarounds
 
