@@ -223,6 +223,7 @@ https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html
 
 https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
+
 # Request for comments
 
 Please provide any commentary or feedback on this essay or the source repository or my bug reports, and suggestions or ideas for further development (pull requests can go to the "comments" file).
@@ -235,5 +236,8 @@ Thu Jun 15 16:59:52 UTC 2023
 
 The unstated truth (or perhaps dirty secret) about the portability of self-hosted Unix and why Unix is such a highly polished gem (initially, anyway) is that it is the first synthetic analogue of a biological organism (with a self-reproduction process), with C being the portable assembly language. As such it is prone to the accumulation of "junk DNA" as well as "viral DNA"  (which might not actually be junk but could trigger or be triggered by another process). In this analogy, OpenBSD's kernel-reodering mechanism (as currently implemented with no integrity checks of object files) is "cancer". Proceeding from the assumption of no contamination of the outside or inside environment is foolish.
 
-All software problems can be fixed, however.
+All software problems can be fixed, however. 
 
+# Addendum
+
+The official response from Theo de Raadt is that the sha256 sums solve nothing, and that I am worried about "second or third-order problems", so I guess it doesn't matter.
