@@ -35,11 +35,11 @@ Manual editing of the install image configuration scripts or tedious work inside
 Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
 
 # Approximately correct protocol to make reorder_kernel transactional (pseudocode)
-
+```
 < foo > denotes a command
 
 In /etc/rc
-```
+
 
 Precondition 1:
 - Assumes that the SHA512 and SHA256 algorithms and their implementations in the system sha256 and sha512 programs are trusted to execute correctly on a host machine 
