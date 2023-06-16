@@ -251,3 +251,7 @@ The official spec of SLSA 1.0 specifically states that a hardend build platform 
 
 https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
 
+"Track/Level Requirements 	            Focus
+ Build L3 	 Hardened build platform 	Tampering during the build"
+
+I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track?
