@@ -84,6 +84,10 @@ I have extracted the compilation phase and linking phase to make them not depend
 
 As of writing, distcc/linux clang would look to be a good candidate for trying to bootstrap the compilation away from the initially-installed OpenBSD system. Trying to do it purely from scratch is difficult (cf. Waite's STAGE2), GNU Mes. Clean-room reimplementation is intractable. 
 
+# Complete automation of the OpenBSD build process
+
+Merely requires concerted effort. A worthwhile direction for further development effort.
+
 # Insufficient Workarounds
 
 OPSEC, COMSEC, encryption:
