@@ -30,7 +30,7 @@ OpenBSD's historical focus on isolation from attacks from outside the system neg
 
 The current implementation also makes the strong assumption that remote holes will never occur in the OpenBSD operating system as a whole going forward, allowing installation of rootkits qua link kits. The "base" install set is a ready-made off-the-shelf trojan horse in and of itself, paired with the fact that in the default install the system runs the reordering routine automatically immediately at the end of the install process and then again periodically at boot with no possibility of user intervention or a prompt to enable or disable the feature, as with other automatic startup options for X11 startup or SSH. It is a lower-level analogue of syspatch operating outside of user control (paired with a lack of checksum verification on the objects).
 
-Manual editing of the install image configuration scripts or tedious work inside the BSD.RD environment is required for a user to disable the feature, yet still install the rest of the complete system.
+Manual editing of the install image configuration scripts or tedious work inside the BSD.RD environment is required for a user to disable the feature, yet still install the rest of the complete system, if an existing OpenBSD environment is not available.
 
 Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
 
