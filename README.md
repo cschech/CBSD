@@ -32,7 +32,7 @@ The current implementation also makes the strong assumption that remote holes wi
 
 Manual editing of the install image configuration scripts or tedious work inside the BSD.RD environment is required for a user to disable the feature, yet still install the rest of the complete system, and entails remastering of the installation images, if an existing OpenBSD environment is not available.
 
-Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5).
+Cf. John Rushby, "The Design and Verification of Secure Systems," Eighth ACM Symposium on Operating System Principles, pp. 12-21, Asilomar, CA, December 1981. (ACM Operating Systems Review, Vol. 15, No. 5):
 
 "[...] I shall argue that the problems with conventional systems have their roots in the use of a security kernel which attempts to impose a single security policy over the whole system. "
 
