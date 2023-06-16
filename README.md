@@ -45,7 +45,7 @@ BEGIN is the initial state of the subsystem under consideration
 Pseudocode follows (this can likely be implemented in prolog or similar or verfied/implemented in automated theorem provers like Coq using Hoare logic)
 -------------------------------------------------------------------------------------------------------------------------------------
 
-BEGIN < /etc/rc >
+BEGIN </etc/rc>
 
 
 Precondition 1:
