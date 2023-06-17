@@ -31,4 +31,4 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform:
 
 # Addendum
 
-The official response from Theo de Raadt is that the sha256 sums solve nothing, and that I am worried about "second or third-order problems", so I guess it doesn't matter. Into the trash it goes.
+The official response from Theo de Raadt it's irrelevant.
