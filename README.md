@@ -31,4 +31,4 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform:
 
 # Addendum
 
-The official response from Theo de Raadt it's irrelevant.
+The official response from Theo de Raadt it's irrelevant. Into the trash it goes.
