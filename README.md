@@ -6,7 +6,22 @@
 
 # Insecurity of the OpenBSD 7.3/amd64 distribution
 
-The reordering of OpenBSD kernels is not transactional and a local unpatched exploit exists which allows tampering or replacement of the kernel as arbitrary build artifacts are cyclically relinked with no data integrity or provenance being kept or verified by the automatic (and mandatory !) relinking process that occurs at the end of installation and also automatically every reboot cycle unless manually bypassed. Install media are also open to tampering and exploitation as signed checksum data are not carried with the install sets inside the installation image and a poorly-documented tarball of unverifiable (in the sense of SLSA) kernel objects is embedded in the base distribution and then relinked in a random order cyclically between boot cycles. Sites with a strong security posture are advised that this is a critical vulnerability and likely deliberate back door into the system. Additionally, OpenBSD leaks the state of the pseudorandom number generator to predictable locations on disk and in system memory at a fixed point during every start up and shutdown procedure. The lack of build process hardening has been on-going for over three years. Theo de Raadt is disinterested in improving or reviewing the design or providing any further clarification, as he has stated on the mailing list when shortfalls in the relinking process were reported over the past ~3 years. I hope that this can come to the attention of a third-party technical expert with standing in the computer security industry.
+The reordering of OpenBSD kernels is NOT transactional and as a result, a local unpatched exploit exists which allows tampering or replacement of the kernel as arbitrary build artifacts are cyclically relinked with no data integrity or provenance being kept or verified before execution of the mandatory kernel_reorder process in the supplied rc scripts. This occurs at the end of installation and also automatically every reboot cycle unless manually bypassed. kernel_reorder verifies a SHA256 signature for the linked kernel from last boot but does not verify the integrity or provenance of any objects kept in the kernel "link kit" installed in /usr/share/relink, so arbitrary objects can be injected and automatically relinked at the next startup. I have verified that it is indeed the case that both valid kernels with a different uname and kernels which cause data destruction due to over-tuning of a subset of the components which were compiled manually and copied into /usr/share/relink and crash the system after being booted once relinked but which do not match the build of the running kernel at the time they were copied into /usr/share/relink as working exploits.  
+
+Install media are also open to tampering and exploitation as signed checksum data are not carried with the install sets inside the installation image and a poorly-documented tarball of unverifiable (in the sense of SLSA) kernel objects is embedded in the base distribution and then relinked in a random order cyclically between boot cycles. 
+
+Sites with a strong security posture are advised that this is a critical vulnerability and likely deliberate back door into the system. Additionally, OpenBSD leaks the state of the pseudorandom number generator to predictable locations on disk and in system memory at a fixed point during every start up and shutdown procedure. The lack of build process hardening has been on-going for over three years. Theo de Raadt is disinterested in improving or reviewing the design or providing any further clarification, as he has stated on the mailing list when shortfalls in the relinking process were reported over the past ~3 years. I hope that this can come to the attention of a third-party technical expert with standing in the computer security industry.
+
+Cf.
+
+https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2 (noted lack of idempotency)
+
+https://marc.info/?l=openbsd-bugs&m=168688579123005&w=2 (noted lack of integrity or provenance verification)
+
+https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform:
+
+"Track/Level Requirements 	            Focus
+ Build L3 	  Hardened build platform 	 Tampering during the build"
 
 
 ***
@@ -261,7 +276,6 @@ https://www.schneier.com/blog/archives/2007/11/the_strange_sto.html
 
 # My initial bug report to the OpenBSD mailing list:
 
-https://marc.info/?l=openbsd-bugs&m=159074964523007&w=2
 
 
 # Request for comments
@@ -282,13 +296,5 @@ All software problems can be fixed, however.
 
 The official response from Theo de Raadt is that the sha256 sums solve nothing, and that I am worried about "second or third-order problems", so I guess it doesn't matter.
 
-https://marc.info/?l=openbsd-bugs&m=168688579123005&w=2
-
-The official spec of SLSA 1.0 specifically states that a hardend build platform is the desired highest state of compliance (ironically):
-
-https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform
-
-"Track/Level Requirements 	            Focus
- Build L3 	  Hardened build platform 	 Tampering during the build"
 
 I had not read this document until today when GitHub recommended I install a dummy SLSA3 build automation script. Maybe I am on the right track as I reached the same conclusion after noticing the problem three years ago? A formal approach to security hardening is required for software systems which are self-hosting, generally.
