@@ -4,7 +4,10 @@
 
 [2] https://www.computer.org/csdl/magazine/sp/2010/06/msp2010060005/13rRUy08MDu
 
-[3] DRAKON visual specification language solves the problem of reasoning about rc script execution.
+[3] DRAKON* visual specification language solves the problem of reasoning about rc script execution.
+
+* Acronym for "Friendly Russian Algorithmic Language That Provides Visibility/Reliability" 
+
 
 
 # Insecurity of the OpenBSD 7.3/amd64 distribution
