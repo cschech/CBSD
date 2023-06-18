@@ -4,6 +4,9 @@
 
 [2] https://www.computer.org/csdl/magazine/sp/2010/06/msp2010060005/13rRUy08MDu
 
+[3] DRAKON visual specification language solves the problem of reasoning about rc script execution.
+
+
 # Insecurity of the OpenBSD 7.3/amd64 distribution
 
 The automatic and mandatory-by-default reordering of OpenBSD kernels is NOT transactional and as a result, a local unpatched exploit exists which allows tampering or replacement of the kernel. Arbitrary build artifacts are cyclically relinked with no data integrity or provenance being maintained or verified for the objects being consumed with respect to the running kernel before and during the execution of the mandatory kernel_reorder process in the supplied /etc/rc and /usr/libexec scripts. The reordering occurs at the end of installation process and also automatically every reboot cycle thereafter unless manually bypassed by a knowledgable party.
