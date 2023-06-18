@@ -33,4 +33,33 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform:
 
 The official response from Theo de Raadt it's irrelevant. "Security and correctness" is apparently the focus according to the INSTALL blurb. Into the trash it goes.
 
+# Additional architectural security flaws found since the intial writeup through additional investigation and recompilation efforts with a clean GNU compiler set:
+
+
+# ports.tar.gz
+
+mozilla-firefox port shims it's own version of cc and clang rather than respecting system-provided compilers
+
+# src.tar.gz
+
+Compiler reinstallation and overwriting in addition to self-hosting:
+
+Ambiguously renaming gcc to egcc by default to make GNU autoconf configuration scripts fail and calling all compilers installed by the system cc instead of clearly identifying the compiler as clang and using a symlink or chooser cf. e.g. Debian allows the following shim to be put in place that will not be noticed unless by an astute administrator.
+
+- Userland build process reinstalls the "cc" embedded in the distribution over the system cc when installed, and installs a nested compilation of rust, with a huge number of randomly-contributed dependencies.
+
+Following the naming convention of cc for distribution compiler, gcc for gcc and clang for clang ameliorates this problem. There is a reason that Intel ships a compiler - it's so you know that you aren't in a garbage-in-garbage out situation with a chain of shoddy software. If Intel wants to put backdoors in they put them in another module or the microcode or both or implement functions completely in hardware. That is why we also have AMD. There is no reason to imagine that the Minix running inside the management engine is not completely isolated. They have the complete source for V6 Unix and for Minix and a completely sterile build environment plus the top experts. 
+
+OpenBSD clang 13.0 is over 80 mb of ELF code, gcc 8.x is 1.1 MB... 
+
+Such nested installation and build processes are now pervasive, not just in the operating system bootstrap. This is completely against the ethos of a standard distribution's base system.
+
+Analyst comments:
+
+UNVEIL(2) can be used to hide undocumented background processes as much as a "sandboxing" tool. Firefox with only /~/Downloads and /tmp hardcoded into the binary and with modification requiring recompilation rather than being a chrome:// setting is utterly ridiculous. OpenBSD is following trends in consumer operating systems to remove basic functionality on a whim, and require an undocumented workaround to restore the functionality - if the system is secure by default, Firefox would be treated the same as any other process. If Firefox sandboxing is desired it can accomplished via user-accessible configuration in the ports system. The implication being that *any* process can be sandboxed and slipped in to the distribution to hide undocumented activity. This effectively makes it a closed-source distribution with an open-source marketing veneer, in the vein of OpenAI.
+
+
+
+
+
 
