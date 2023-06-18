@@ -45,7 +45,8 @@ Compiler reinstallation and overwriting in addition to self-hosting:
 
 Ambiguously renaming gcc to egcc by default to make GNU autoconf configuration scripts fail and calling all compilers installed by the system cc instead of clearly identifying the compiler as clang and using a symlink or chooser cf. e.g. Debian allows the following shim to be put in place that will not be noticed unless by an astute administrator.
 
-- Userland build process reinstalls the "cc" embedded in the distribution over the system cc when installed, and installs a nested compilation of rust, with a huge number of randomly-contributed dependencies.
+- Userland build process reinstalls the "cc" embedded in the distribution over the system cc when installed
+- firefox port build installs a nested compilation of rust, which shims its own clang compiler ignoring the environment; with a huge number of randomly-contributed dependencies.
 
 Following the naming convention of cc for distribution compiler, gcc for gcc and clang for clang ameliorates this problem. There is a reason that Intel ships a compiler - it's so you know that you aren't in a garbage-in-garbage out situation with a chain of shoddy software. If Intel wants to put backdoors in they put them in another module or the microcode or both or implement functions completely in hardware. That is why we also have AMD. There is no reason to imagine that the Minix running inside the management engine is not completely isolated. They have the complete source for V6 Unix and for Minix and a completely sterile build environment plus the top experts. 
 
@@ -57,14 +58,10 @@ Analyst comments:
 
 UNVEIL and rootkits:
 
-Treatment of Firefox is completely anathema to the principle of an open system or a UNIX-like operating system.
-
-UNVEIL(2) can be used to hide undocumented background processes as much as a "sandboxing" tool. Firefox with only /~/Downloads and /tmp hardcoded into the binary and with modification requiring recompilation rather than being a chrome:// setting is utterly ridiculous. OpenBSD is following trends in consumer operating systems to remove basic functionality arbitrarily for some applications and not others, and breaking standard integrations with the rest of the system as a whole - requiring an undocumented workaround to restore the functionality which bootstraps an alien build environment - if the system is secure by default, Firefox would be treated the same as any other process. If Firefox sandboxing is desired it can accomplished via user-accessible configuration in the ports system. The implication being that *any* process can be sandboxed and slipped in to the distribution to hide undocumented activity. This effectively makes it a closed-source distribution with an open-source marketing veneer, in the vein of OpenAI. Firefox's permissions should be handled by the filesystem permissions. This is like how VLC "doesn't let you start as root". Having to patch out a bunch of nonsense system calls doesn't add any security but trades it off with wasted time and effort to work around "hardening". Per-application restrictions should be handled in /etc rather than compiled in to packages arbitrarily. The packages are supposed to be built for general use which facilitates finding regressions.
-
-Capability-based operating systems with sound design principles are already an area of extensive study and historical development, and the work that Solaris did to produce a very reliable commercial UNIX system is being forgotten. Solaris Zones. FreeBSD jails.
-
-Cross-cutting concerns and lack of modularity and improperly-encapsulated modules and build processes is showcased in the most popular piece of user software. Regressions are everywhere - the build of firefox does not even work correctly with a local HTTP server running on port 8080 invoked with python3.
+UNVEIL(2) can be used to hide undocumented background processes, essentially turns OpenBSD into Android. 
 
 savecore (1) is broken even in "permanently insecure" mode.
 
 A tool such as DTrace and modern memory forensics are required for higher assurance of system behaviour in any tractable sense.
+
+Additionally firefox is basically unusable - the model of monolithic systems and "apps", and only more such "hardening will happen in the future, making the provided packages even harder to debug or verify functionality.
