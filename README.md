@@ -33,8 +33,7 @@ https://slsa.dev/spec/v1.0/levels#build-l2-hosted-build-platform:
 
 The official response from Theo de Raadt it's irrelevant. "Security and correctness" is apparently the focus according to the INSTALL blurb. Into the trash it goes.
 
-# Additional architectural security flaws found since the intial writeup through additional investigation and recompilation efforts with a clean GNU compiler set:
-
+Additional architectural security flaws found since the intial writeup through additional investigation and recompilation efforts with a clean GNU compiler set:
 
 # ports.tar.gz
 
@@ -56,10 +55,16 @@ Such nested installation and build processes are now pervasive, not just in the 
 
 Analyst comments:
 
-UNVEIL(2) can be used to hide undocumented background processes as much as a "sandboxing" tool. Firefox with only /~/Downloads and /tmp hardcoded into the binary and with modification requiring recompilation rather than being a chrome:// setting is utterly ridiculous. OpenBSD is following trends in consumer operating systems to remove basic functionality on a whim, and require an undocumented workaround to restore the functionality - if the system is secure by default, Firefox would be treated the same as any other process. If Firefox sandboxing is desired it can accomplished via user-accessible configuration in the ports system. The implication being that *any* process can be sandboxed and slipped in to the distribution to hide undocumented activity. This effectively makes it a closed-source distribution with an open-source marketing veneer, in the vein of OpenAI.
+UNVEIL and rootkits:
 
+Treatment of Firefox is completely anathema to the principle of an open system or a UNIX-like operating system.
 
+UNVEIL(2) can be used to hide undocumented background processes as much as a "sandboxing" tool. Firefox with only /~/Downloads and /tmp hardcoded into the binary and with modification requiring recompilation rather than being a chrome:// setting is utterly ridiculous. OpenBSD is following trends in consumer operating systems to remove basic functionality arbitrarily for some applications and not others, and breaking standard integrations with the rest of the system as a whole - requiring an undocumented workaround to restore the functionality which bootstraps an alien build environment - if the system is secure by default, Firefox would be treated the same as any other process. If Firefox sandboxing is desired it can accomplished via user-accessible configuration in the ports system. The implication being that *any* process can be sandboxed and slipped in to the distribution to hide undocumented activity. This effectively makes it a closed-source distribution with an open-source marketing veneer, in the vein of OpenAI.
 
+Capability-based operating systems with sound design principles are already an area of extensive study and historical development, and the work that Solaris did to produce a very reliable commercial UNIX system is being forgotten.
 
+Cross-cutting concerns and lack of modularity and improperly-encapsulated modules and build processes is showcased in the most popular piece of user software. Regressions are everywhere - the build of firefox does not even work correctly with a local HTTP server running on port 8080 invoked with python3.
 
+savecore (1) is broken even in "permanently insecure" mode.
 
+A tool such as DTrace and modern memory forensics are required for higher assurance of system behaviour in any tractable sense.
