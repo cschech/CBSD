@@ -1,6 +1,6 @@
-# Abstract
+# CBSD 0.02
 
-A fork of OpenBSD to address pervasive security, data integrity, and reliability problems due to a lack of adequate systems engineering.
+A new Unix variant and fork of OpenBSD 7.3 that addresses pervasive security, data integrity, and reliability problems due to a lack of adequate systems engineering.
 
 # Insecurity of the OpenBSD 7.3/amd64 distribution
 
