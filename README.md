@@ -8,6 +8,7 @@
 
 * Acronym for "Friendly Russian Algorithmic Language That Provides Visibility/Reliability" 
 
+[![Erlang example in DRAKON](https://img.youtube.com/vi/TYmZExJ4nGI/0.jpg)](https://www.youtube.com/watch?v=TYmZExJ4nGI)
 
 
 # Insecurity of the OpenBSD 7.3/amd64 distribution
