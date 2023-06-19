@@ -11,6 +11,8 @@ The kernel_reorder routine verifies a SHA256 signature for the linked kernel fro
 ![Image](IMG_20230618_154520.gif) 
 Fig. 2: OpenBSD 7.3
 
+#Tampering
+
 Install media are also open to tampering and exploitation as signed checksum data are not carried with the install sets inside the installation image and an improperly-encapsulated poorly-documented tarball of unverifiable (in the sense of SLSA) kernel objects is embedded in the base distribution and then relinked with a new random ordering of the objects cyclically between boot cycles.
 
 Sites with a strong security posture are advised that this is a critical vulnerability and likely deliberate back door into the system. Additionally, OpenBSD leaks the state of the pseudorandom number generator to predictable locations on disk and in system memory at a fixed point during every start up and shutdown procedure - "random_seed()" in /etc/rc. There isn't even an attempt to collect entropy before running it at startup or collect entropy during the install from the network or the user. The lack of build process hardening has been on-going for over three years. Theo de Raadt is disinterested in improving or reviewing the design or providing any further clarification, as he has stated on the mailing list when shortfalls in the relinking process were reported over the past ~3 years. I hope that this can come to the attention of a third-party technical expert with standing in the computer security industry.
