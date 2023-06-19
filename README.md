@@ -4,9 +4,8 @@ The automatic and mandatory-by-default reordering of OpenBSD kernels is NOT tran
 
 The kernel_reorder routine verifies a SHA256 signature for the linked kernel from last boot but does not verify the integrity or provenance of any objects kept in the kernel "link kit" installed in /usr/share/relink, so arbitrary objects can be injected and automatically relinked at the next startup. I have verified that it is indeed the case that both valid kernels with a different uname and kernels which cause data destruction due to over-tuning of a subset of the components which were compiled manually and copied into /usr/share/relink and crash the system after being booted once relinked but which do not match the build of the running kernel at the time they were copied into /usr/share/relink as working proof-of-concept exploits.
 
-
-![Image](IMG_20230618_172002.gif)
-Fig. 1: OpenBSD 7.3
+![Image](IMG_20230618_154520.gif) 
+Fig. 2: OpenBSD 7.3
 
 Install media are also open to tampering and exploitation as signed checksum data are not carried with the install sets inside the installation image and an improperly-encapsulated poorly-documented tarball of unverifiable (in the sense of SLSA) kernel objects is embedded in the base distribution and then relinked with a new random ordering of the objects cyclically between boot cycles.
 
@@ -64,11 +63,12 @@ A tool such as DTrace and modern memory forensics are required for higher assura
 
 Additionally firefox is basically unusable - the model of monolithic systems and "apps", and only more such "hardening will happen in the future, making the provided packages even harder to debug or verify functionality.
 
-![Image](IMG_20230618_154520.gif) 
-Fig. 2: Theory
+![Image](IMG_20230618_172002.gif)
+Fig. 1: Theory
+
 
 ![Image](IMG_20230618_165024.gif) 
-Fig 3. Implementation
+Fig 3. CBSD Implementation
 
 
 
